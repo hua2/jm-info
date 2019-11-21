@@ -1,40 +1,42 @@
 <template>
-  <div class="second-right">
-    <div class="mb-10">
-      <p>货期</p>
-      <div class="c-l-select flex">
-        <button>公制</button>
-        <button>美制</button>
-        <button>英制</button>
-      </div>
-    </div>
-    <div class="mb-10">
-      <p>信用等级</p>
-      <div class="c-l-select flex">
-        <button>认证供应商</button>
-        <button>银牌供应商</button>
-        <button>金牌供应商</button>
-      </div>
-    </div>
-    <div class="mb-10">
-      <p>付款方式</p>
-      <div class="c-l-select flex">
-        <button>微信</button>
-        <button>支付宝</button>
-        <button>银联</button>
-        <button>Visa</button>
-        <button>角马分期</button>
-      </div>
-    </div>
-    <div>
-      <p>配送</p>
-      <div class="c-l-select flex">
-        <button>物流</button>
-        <button>快递</button>
-        <button>供应商配送</button>
-      </div>
-    </div>
+  <div>
     <ChinaMap />
+    <div class="second-right">
+      <div class="mb-10">
+        <p>货期</p>
+        <div class="c-l-select flex">
+          <button>公制</button>
+          <button>美制</button>
+          <button>英制</button>
+        </div>
+      </div>
+      <div class="mb-10">
+        <p>信用等级</p>
+        <div class="c-l-select flex">
+          <button>认证供应商</button>
+          <button>银牌供应商</button>
+          <button>金牌供应商</button>
+        </div>
+      </div>
+      <div class="mb-10">
+        <p>付款方式</p>
+        <div class="c-l-select flex">
+          <button>微信</button>
+          <button>支付宝</button>
+          <button>银联</button>
+          <button>Visa</button>
+          <button>角马分期</button>
+        </div>
+      </div>
+      <div>
+        <p>配送</p>
+        <div class="c-l-select flex">
+          <button>物流</button>
+          <button>快递</button>
+          <button>供应商配送</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

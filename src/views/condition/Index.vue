@@ -20,7 +20,7 @@
         <button>ML40CR钢</button>
         <button>PA66</button>
         <button>不锈钢304</button>
-        <span style="color: #1e98ea" class="ml-12">更多</span>
+        <span style="color: #1e98ea" class="ml-12 cursor-pointer">更多</span>
       </div>
       <div class="c-l-select flex">
         <span class="">强度等级</span>
@@ -39,7 +39,7 @@
         <button>DIN912</button>
         <button>GB70-76</button>
         <button>GB70.1</button>
-        <span style="color: #1e98ea" class="ml-12">更多</span>
+        <span style="color: #1e98ea" class="ml-12 cursor-pointer">更多</span>
       </div>
       <div class="c-l-select flex">
         <span class="">螺纹规格d</span>
