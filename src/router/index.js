@@ -17,6 +17,13 @@ const router = new Router({
           path: "home",
           component: () =>
             import(/* webpackChunkName: "home" */ "@/views/home/Index.vue")
+        },
+        {
+          path: "condition",
+          component: () =>
+            import(
+              /* webpackChunkName: "condition" */ "@/views/condition/Index.vue"
+            )
         }
       ]
     }
