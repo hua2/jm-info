@@ -11,6 +11,7 @@
           <SecondRight style="width: 40%" />
         </div>
       </div>
+      <button @click="$router.push('/third')">去报价</button>
     </div>
   </JmFullDialog>
 </template>
