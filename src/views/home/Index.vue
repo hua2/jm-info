@@ -60,7 +60,11 @@ export default {
       this.$refs.uploadPicDialog.showPic = true;
     },
     search() {
-      this.$refs.searchResultDialog.show = true;
+      this.isLoading = true;
+      setTimeout(() => {
+        this.$refs.searchResultDialog.show = true;
+        this.isLoading = false;
+      }, 1000);
     }
   }
 };

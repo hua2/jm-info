@@ -1,7 +1,6 @@
 <template>
   <div class="condition">
     <div class="condition-left flex flex-col">
-      <p>实施采买-条件设定</p>
       <div class="c-l-select flex">
         <span class="">类别</span>
         <button>公制(Metric)</button>
@@ -16,10 +15,10 @@
       <div class="c-l-select flex">
         <span class="">材质</span>
         <button>35CrMoA(SCM435)</button>
-        <button>ML35号钢</button>
-        <button>ML40CR钢</button>
+        <button>ML35号</button>
+        <button>ML40CR号</button>
         <button>PA66</button>
-        <button>不锈钢304</button>
+        <!--        <button>不锈钢304</button>-->
         <span style="color: #1e98ea" class="ml-12">更多</span>
       </div>
       <div class="c-l-select flex">
@@ -29,7 +28,7 @@
         <button>14.9级</button>
         <button>8.8级</button>
         <button>A2-70</button>
-        <button>A4-70</button>
+        <!--        <button>A4-70</button>-->
       </div>
       <div class="c-l-select flex">
         <span class="">产品标准 </span>
@@ -37,8 +36,8 @@
         <button>B18.3</button>
         <button>BS2470</button>
         <button>DIN912</button>
-        <button>GB70-76</button>
-        <button>GB70.1</button>
+        <!--        <button>GB70-76</button>-->
+        <!--        <button>GB70.1</button>-->
         <span style="color: #1e98ea" class="ml-12">更多</span>
       </div>
       <div class="c-l-select flex">
@@ -48,7 +47,7 @@
         <button>M10-1.5</button>
         <button>M12-1.5</button>
         <button>M12-1.75</button>
-        <button>M14-1.5</button>
+        <!--        <button>M14-1.5</button>-->
       </div>
     </div>
   </div>
@@ -56,7 +55,7 @@
 
 <script>
 export default {
-  name: "Index"
+  name: "condition"
 };
 </script>
 
@@ -68,13 +67,6 @@ export default {
     margin-top: 36px;
     width: 100%;
     height: 600px;
-    p {
-      font-weight: 500;
-      font-size: 24px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #c8cdd1;
-    }
     .c-l-select {
       color: #415058;
       span {
