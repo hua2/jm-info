@@ -30,13 +30,25 @@
       <h2 class="text-center">让能源更高效</h2>
       <div class="flex items-center justify-center">
         <input type="text" class="pl-16" />
-        <span class="ml-16"><button>立即询价</button></span>
+        <div class="home-enquiry ml-16">
+          <button>立即询价</button>
+          <div class="home-dropdown">
+            <a href="javascript:" @click="showUploadEnquiryDialog">
+              <span>上传询价</span>
+            </a>
+            <a href="javascript:">
+              <span>上传图纸</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+    <UploadEnquiryDialog ref="uploadEnquiryDialog"></UploadEnquiryDialog>
   </div>
 </template>
 
 <script>
+import UploadEnquiryDialog from "@/views/home/dialog/UploadEnquiryDialog";
 /**
  * 首页模块
  * @author lyh
@@ -44,7 +56,13 @@
  */
 
 export default {
-  name: "Home"
+  name: "Home",
+  components: { UploadEnquiryDialog },
+  methods: {
+    showUploadEnquiryDialog() {
+      this.$refs.uploadEnquiryDialog.show = true;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -110,6 +128,39 @@ export default {
     button {
       height: 40px;
       line-height: 40px;
+    }
+  }
+  .home-dropdown {
+    line-height: 32px;
+    overflow: hidden;
+    color: #415058;
+    cursor: pointer;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 0 rgba(39, 54, 78, 0.12),
+      4px 12px 40px 0 rgba(39, 54, 78, 0.12);
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    font-size: 14px;
+    width: 100%;
+    a {
+      display: block;
+      padding: 6px 8px;
+      &:hover {
+        background-color: #f6f7f8;
+        color: #1f292e;
+      }
+    }
+  }
+  .home-enquiry {
+    position: relative;
+    &:hover {
+      .home-dropdown {
+        display: block;
+      }
     }
   }
 }
