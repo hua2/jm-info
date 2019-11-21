@@ -2,12 +2,8 @@
   <div class="home">
     <div class="home-header flex text-14">
       <div class="header-left flex items-center">
-        <h1 class="header-logo">
-          <a href="#"
-            ><img alt="角马 logo" class="logo core-phone" hidden="hidden" src=""
-          /></a>
-        </h1>
-        <div class="">
+        <img alt="角马 logo" src="../../assets/img/logo.png" />
+        <div class="ml-16">
           <a href="#" style="color: #D7262E">中文</a>
           <span class="ml-4 mr-4">/</span>
           <a class="en" href="#">EN</a>
@@ -72,7 +68,7 @@ export default {
   button {
     color: #fff;
     background-color: #d7262e;
-    width: 92.8px;
+    width: 92px;
     height: 32px;
     line-height: 32px;
     text-align: center;
@@ -83,12 +79,15 @@ export default {
     padding: 0;
   }
   .home-header {
-    padding: 0 16px;
     width: 100%;
     height: 80px;
     color: #415058;
     .header-left {
-      width: 250px;
+      width: 350px;
+      img {
+        width: 50px;
+        height: 36px;
+      }
     }
     .header-content {
       width: 600px;
