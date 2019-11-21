@@ -3,50 +3,20 @@
     <h1>实施采买-报价大厅</h1>
     <div class="third-content flex justify-around">
       <div class="t-c-left">
-        <div class="flex">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="flex">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="flex">
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-        </div>
-        <div class="flex">
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-          <span class="active"></span>
-        </div>
-      </div>
-      <div class="third-countdown">
-        <div class="t-c-cn">倒计时</div>
-        <div class="t-c-en">COUNT DOWN</div>
-        <i class="t-c-io"></i>
-        <div class="t-c-info">距离结束还剩</div>
-        <div class="t-c-count">
-          <div class="t-c-c-hour">
-            <span class="t-c-c-txt">{{ now | moment("HH") }}</span>
+        <div class="flex flex-wrap t-c-seats">
+          <div v-for="(seat, index) in seats" :key="index" class="t-c-s-seat">
+            <p>{{ seat.id }}</p>
+            <p>{{ seat.isSeated ? "已落座" : "" }}</p>
+            <p>{{ seat.isConfirmed ? "已确认" : "" }}</p>
           </div>
-          <div class="t-c-c-min">
-            <span class="t-c-c-txt">{{ now | moment("mm") }}</span>
-          </div>
-          <div class="t-c-c-sec">
-            <span class="t-c-c-txt">{{ now | moment("ss") }}</span>
-          </div>
+        </div>
+        <div class="t-c-countdown" v-if="isSeatedAlready">供应商已就绪</div>
+        <div class="t-c-countdown" v-else-if="isConfirmedAlready">
+          已报价完毕
+        </div>
+        <div class="t-c-countdown" v-else>
+          等待供应商{{ countdownType === "seated" ? "加入" : "报价"
+          }}{{ countdownTime }}
         </div>
       </div>
       <div class="t-c-right flex flex-col">
@@ -69,7 +39,7 @@
         </div>
       </div>
     </div>
-    <button @click="$router.push('/four')">44444</button>
+    <button @click="$router.push('/four')">[44444]</button>
   </div>
 </template>
 
@@ -78,35 +48,156 @@ export default {
   name: "Index",
   data() {
     return {
-      now: new Date(),
+      seats: [
+        {
+          id: 1,
+          isConfirmed: false,
+          isSeated: false
+        }
+      ],
+      isSeatedAlready: false,
+      isConfirmedAlready: false,
+      countdownTime: 10, // 倒计时多少秒开始
       countdownIntervalId: null,
-      countdownTimeoutId: null
+      countdownType: "seated" //confirmed
     };
   },
   created() {
-    this.now.setHours(0, 10, 0, 0);
-    this.countdown();
-    this.autoStopCountdown();
+    this.initSeats();
+    setTimeout(() => {
+      this.countdownSeated();
+    }, 1000);
   },
   methods: {
+    initSeats() {
+      this.seats = [];
+      for (let i = 0; i < 20; i++) {
+        this.seats.push({
+          id: i + 1,
+          isConfirmed: false,
+          isSeated: false
+        });
+      }
+    },
+    countdownSeated() {
+      this.isSeatedAlready = false;
+      this.isConfirmedAlready = false;
+      this.countdownType = "seated";
+      this.countdown();
+    },
+    countdownConfirmed() {
+      this.isSeatedAlready = false;
+      this.isConfirmedAlready = false;
+      this.countdownType = "confirmed";
+      this.countdown();
+    },
     countdown() {
+      if (this.countdownIntervalId) {
+        clearInterval(this.countdownIntervalId);
+      }
+      // 重新设置倒计时
+      this.countdownTime = 10;
       this.countdownIntervalId = setInterval(() => {
-        this.now.setSeconds(this.now.getSeconds() - 1);
-        this.$forceUpdate();
+        this.countdownTime--;
+        if (this.countdownType === "seated") {
+          this.randomSeatedSeats();
+        }
+        if (this.countdownType === "confirmed") {
+          this.randomSeatedConfirmed();
+        }
+        // 倒计时结束
+        if (this.countdownTime === 0) {
+          clearInterval(this.countdownIntervalId);
+
+          if (this.countdownType === "confirmed") {
+            this.isConfirmedAlready = true;
+          }
+          if (this.countdownType === "seated") {
+            this.isSeatedAlready = true;
+            setTimeout(() => {
+              this.countdownConfirmed();
+            }, 2000);
+          }
+        }
       }, 1000);
     },
-    autoStopCountdown() {
-      this.countdownTimeoutId = setTimeout(() => {
-        clearInterval(this.countdownIntervalId);
-      }, 1000 * 60 * 10);
+    randomSeatedSeats() {
+      let notSeatedSeats = this.seats.filter(s => s.isSeated === false);
+      if (notSeatedSeats.length === 0) {
+        return;
+      }
+      // 随机生成 这次落座数量 （如果想提前落座 调大max）
+      let randomNum = this.getRandomNum(1, 2);
+      // 判断是否超过未落坐人数
+      if (randomNum >= notSeatedSeats.length) {
+        randomNum = notSeatedSeats.length;
+      }
+      // 随机打乱数组
+      notSeatedSeats = this.getArrRandomly(notSeatedSeats);
+      for (let i = 0; i < randomNum; i++) {
+        notSeatedSeats[i].isSeated = true;
+      }
+      // 把落座数据重新 赋值显示
+      this.seats = this.seats.map(s => {
+        const newSeat = notSeatedSeats.find(n => n.id === s.id);
+        if (newSeat && newSeat.id) {
+          return newSeat;
+        } else {
+          return s;
+        }
+      });
+    },
+    randomSeatedConfirmed() {
+      // 获取已落座 但是未选的坐席
+      let notConfirmedSeats = this.seats.filter(
+        s => s.isConfirmed === false && s.isSeated === true
+      );
+      if (notConfirmedSeats.length === 0) {
+        return;
+      }
+      // 随机生成 这次落座数量 （如果想提前落座 调大max）
+      let randomNum = this.getRandomNum(0, 2);
+      // 判断是否超过未落坐人数
+      if (randomNum >= notConfirmedSeats.length) {
+        randomNum = notConfirmedSeats.length;
+      }
+      // 随机打乱数组
+      notConfirmedSeats = this.getArrRandomly(notConfirmedSeats);
+      for (let i = 0; i < randomNum; i++) {
+        notConfirmedSeats[i].isConfirmed = true;
+      }
+      // 把落座数据重新 赋值显示
+      this.seats = this.seats.map(s => {
+        const newSeat = notConfirmedSeats.find(n => n.id === s.id);
+        if (newSeat && newSeat.id) {
+          return newSeat;
+        } else {
+          return s;
+        }
+      });
+    },
+    //生成从min到max的随机数
+    getRandomNum(min, max) {
+      return Math.round(Math.random() * (max - min)) + min;
+    },
+    getArrRandomly(arr) {
+      let len = arr.length;
+      //首先从最大的数开始遍历，之后递减
+      for (let i = len - 1; i >= 0; i--) {
+        //随机索引值randomIndex是从0-arr.length中随机抽取的
+        let randomIndex = Math.floor(Math.random() * (i + 1));
+        //下面三句相当于把从数组中随机抽取到的值与当前遍历的值互换位置
+        let itemIndex = arr[randomIndex];
+        arr[randomIndex] = arr[i];
+        arr[i] = itemIndex;
+      }
+      //每一次的遍历都相当于把从数组中随机抽取（不重复）的一个元素放到数组的最后面（索引顺序为：len-1,len-2,len-3......0）
+      return arr;
     }
   },
   beforeDestroy() {
     if (this.countdownIntervalId) {
       clearInterval(this.countdownIntervalId);
-    }
-    if (this.countdownTimeoutId) {
-      clearTimeout(this.countdownTimeoutId);
     }
   }
 };
@@ -126,17 +217,29 @@ export default {
     border-bottom: 1px solid #c8cdd1;
   }
   .third-content {
-    span {
-      width: 64px;
-      height: 64px;
-      margin: 12px;
-      background: #eeeeee;
-    }
-    .active {
-      width: 64px;
-      height: 64px;
-      margin: 12px;
-      background: #2c7a7b;
+    .t-c-left {
+      position: relative;
+      width: 440px;
+      .t-c-seats {
+        width: 100%;
+        .t-c-s-seat {
+          width: 64px;
+          height: 64px;
+          margin: 12px;
+          background: #eeeeee;
+          font-size: 12px;
+        }
+      }
+      .t-c-countdown {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        padding-top: 158px;
+        font-size: 24px;
+        font-weight: bold;
+      }
     }
     .t-c-right {
       margin-left: 32px;
@@ -155,92 +258,6 @@ export default {
             font-weight: 400;
             background: #ffffff;
           }
-        }
-      }
-    }
-  }
-
-  .third-countdown {
-    width: 190px;
-    height: 275px;
-    margin-left: 32px;
-    background-color: #e83632;
-    position: relative;
-    .t-c-cn {
-      position: absolute;
-      top: 42px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 34px;
-      color: #fff;
-    }
-
-    .t-c-en {
-      position: absolute;
-      top: 90px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 20px;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .t-c-io {
-      width: 20px;
-      height: 33px;
-      position: absolute;
-      background: url("../../assets/img/seckill.png") no-repeat -32.5px 0;
-      background-size: 52.5px 40px;
-      left: 85px;
-      top: 126px;
-      display: block;
-    }
-
-    .t-c-info {
-      position: absolute;
-      top: 170px;
-      text-align: center;
-      width: 100%;
-      font-size: 16px;
-      color: #fff;
-    }
-
-    .t-c-count {
-      position: absolute;
-      top: 212px;
-      left: 30px;
-      height: 40px;
-      .t-c-c-hour,
-      .t-c-c-min,
-      .t-c-c-sec {
-        position: relative;
-        background-color: #2f3430;
-        width: 40px;
-        height: 40px;
-        float: left;
-        text-align: center;
-        line-height: 40px;
-        margin-right: 5px;
-      }
-
-      .t-c-c-txt {
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
-        height: auto;
-        width: auto;
-        margin: 0;
-        background: unset;
-        &:before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background-color: #e83632;
         }
       }
     }
