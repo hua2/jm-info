@@ -15,8 +15,8 @@
       <div class="c-l-select flex">
         <span class="">材质</span>
         <button>35CrMoA(SCM435)</button>
-        <button>ML35号</button>
-        <button>ML40CR号</button>
+        <button>ML35</button>
+        <button>ML40CR</button>
         <button>PA66</button>
         <!--        <button>不锈钢304</button>-->
         <span style="color: #1e98ea" class="ml-12">更多</span>

@@ -109,7 +109,7 @@ export default {
       width: 420px;
       height: 40px;
       border-radius: 3px;
-      border: 1px solid #415058;
+      border: 1px solid #d7262e;
     }
     button {
       height: 40px;

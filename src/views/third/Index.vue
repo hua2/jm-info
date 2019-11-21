@@ -1,7 +1,7 @@
 <template>
   <div class="third">
-    <p>实施采买-报价大厅</p>
-    <div class="third-content flex">
+    <h1>实施采买-报价大厅</h1>
+    <div class="third-content flex justify-around">
       <div class="t-c-left">
         <div class="flex">
           <span></span>
@@ -51,11 +51,11 @@
       </div>
       <div class="t-c-right flex flex-col">
         <div class="t-c-details">
-          <h1 class="">商品详情</h1>
+          <p class="">商品详情</p>
           <div>
             <div>类别 <span>公制(Metric)</span></div>
             <div>系列 <span>粗牙</span></div>
-            <div><span>材质 35CrMoA(SCM435)</span></div>
+            <div>材质<span>35CrMoA(SCM435)</span></div>
             <div>强度等级<span> 12.9级</span></div>
             <div>产品标准<span> DIN912</span></div>
             <div>螺纹规格d<span> M1.4-0.3</span></div>
@@ -68,8 +68,8 @@
           </div>
         </div>
       </div>
-      <button @click="$router.push('/four')">44444</button>
     </div>
+    <button @click="$router.push('/four')">44444</button>
   </div>
 </template>
 
@@ -117,8 +117,7 @@ export default {
   width: 100%;
   margin-top: 48px;
   padding: 0 100px;
-
-  p {
+  h1 {
     font-weight: 500;
     font-size: 24px;
     margin-bottom: 20px;
@@ -143,9 +142,10 @@ export default {
       margin-left: 32px;
       /*background: #eeeeee;*/
       .t-c-details {
-        h1 {
+        p {
           font-size: 20px;
           margin-left: 12px;
+          margin-bottom: 12px;
         }
         div {
           font-size: 14px;
