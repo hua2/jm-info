@@ -34,15 +34,15 @@
         <button>供应商配送</button>
       </div>
     </div>
-    <!--    <ChinaMap />-->
+    <ChinaMap />
   </div>
 </template>
 
 <script>
-// import ChinaMap from "@/components/ChinaMap/index";
+import ChinaMap from "@/components/ChinaMap/index";
 export default {
-  name: "SecondRight"
-  // components: { ChinaMap }
+  name: "SecondRight",
+  components: { ChinaMap }
 };
 </script>
 

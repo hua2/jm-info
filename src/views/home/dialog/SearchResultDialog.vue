@@ -1,14 +1,11 @@
 <template>
   <JmFullDialog v-if="show" @close="show = false">
     <div class="search-result">
-      <div
-        class="search-content"
-        :class="show ? 'slide-in-top' : 'slide-out-top'"
-      >
+      <div class="search-content slide-in-top">
         <p>实施采买-条件设定</p>
         <div class="flex">
-          <Condition style="width: 60%" />
-          <SecondRight style="width: 40%" />
+          <Condition />
+          <SecondRight />
         </div>
       </div>
     </div>
@@ -17,11 +14,11 @@
 
 <script>
 import JmFullDialog from "@/components/JmFullDialog/index";
-import Condition from "@/views/home/components/condition/Index";
 import SecondRight from "@/views/home/components/SecondRight";
+import Condition from "@/views/home/components/Condition";
 export default {
   name: "SearchResultDialog",
-  components: { SecondRight, Condition, JmFullDialog },
+  components: { Condition, SecondRight, JmFullDialog },
   data() {
     return {
       show: false
@@ -37,36 +34,6 @@ export default {
       both;
     animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
-  .slide-out-top {
-    -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-      both;
-    animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  }
-  @-webkit-keyframes slide-out-top {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateY(-1000px);
-      transform: translateY(-1000px);
-      opacity: 0;
-    }
-  }
-  @keyframes slide-out-top {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateY(-1000px);
-      transform: translateY(-1000px);
-      opacity: 0;
-    }
-  }
-
   @-webkit-keyframes slide-in-top {
     0% {
       -webkit-transform: translateY(-1000px);
