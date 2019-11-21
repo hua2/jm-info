@@ -34,22 +34,24 @@
       </div>
       <div class="t-c-right flex flex-col">
         <div id="app">{{ `${sec}分钟` }}</div>
-        <div>
-          <div>类别 <span>公制(Metric)</span></div>
-          <div>系列 <span>粗牙</span></div>
-          <div><span>材质 35CrMoA(SCM435)</span></div>
-          <div>强度等级<span> 12.9级</span></div>
-          <div>产品标准<span> DIN912</span></div>
-          <div>螺纹规格d<span> M1.4-0.3</span></div>
-          <div>长度L<span> 发黑</span></div>
-          <div>表面处理<span> 强度等级 12.9级</span></div>
-          <div>货期：</div>
-          <div>供应商信用等级<span> 金牌供应商</span></div>
-          <div>付款方式<span> 微信，角马分期</span></div>
-          <div>配送方式<span> 物流，快递</span></div>
+        <div class="t-c-details">
+          <h1 class="">商品详情</h1>
+          <div><span>类别:</span>公制(Metric)</div>
+          <div><span>系列:</span>粗牙</div>
+          <div><span>材质:</span>5CrMoA(SCM435)</div>
+          <div><span>强度等级:</span>12.9级</div>
+          <div><span>产品标准:</span>DIN912</div>
+          <div><span>螺纹规格d:</span>M1.4-0.3</div>
+          <div><span>长度L:</span>发黑</div>
+          <div><span>表面处理:</span>强度等级 12.9级</div>
+          <div><span>货期:</span>1天</div>
+          <div><span>供应商信用等级:</span>金牌供应商</div>
+          <div><span>付款方式:</span>微信，角马分期</div>
+          <div><span>配送方式:</span>物流，快递</div>
         </div>
       </div>
     </div>
+    <button @click="$router.push('/four')">44444</button>
   </div>
 </template>
 
@@ -104,20 +106,35 @@ export default {
   }
   .third-content {
     span {
-      width: 96px;
-      height: 96px;
+      width: 82px;
+      height: 82px;
       margin: 12px;
       background: #eeeeee;
     }
     .active {
-      width: 96px;
-      height: 96px;
+      width: 82px;
+      height: 82px;
       margin: 12px;
       background: #2c7a7b;
     }
     .t-c-right {
       margin-left: 96px;
       /*background: #eeeeee;*/
+      .t-c-details {
+        h1 {
+          font-size: 20px;
+          margin-left: 12px;
+        }
+        div {
+          font-size: 14px;
+          margin-bottom: 6px;
+          span {
+            font-size: 14px;
+            font-weight: 400;
+            background: #ffffff;
+          }
+        }
+      }
     }
   }
 }
