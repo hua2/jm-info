@@ -32,26 +32,44 @@
           <span class="active"></span>
         </div>
       </div>
-      <div class="t-c-right flex flex-col">
-        <div id="app">{{ `${sec}分钟` }}</div>
-        <div class="t-c-details">
-          <h1 class="">商品详情</h1>
-          <div><span>类别:</span>公制(Metric)</div>
-          <div><span>系列:</span>粗牙</div>
-          <div><span>材质:</span>5CrMoA(SCM435)</div>
-          <div><span>强度等级:</span>12.9级</div>
-          <div><span>产品标准:</span>DIN912</div>
-          <div><span>螺纹规格d:</span>M1.4-0.3</div>
-          <div><span>长度L:</span>发黑</div>
-          <div><span>表面处理:</span>强度等级 12.9级</div>
-          <div><span>货期:</span>1天</div>
-          <div><span>供应商信用等级:</span>金牌供应商</div>
-          <div><span>付款方式:</span>微信，角马分期</div>
-          <div><span>配送方式:</span>物流，快递</div>
+      <div class="third-countdown">
+        <div class="t-c-cn">倒计时</div>
+        <div class="t-c-en">COUNT DOWN</div>
+        <i class="t-c-io"></i>
+        <div class="t-c-info">距离结束还剩</div>
+        <div class="t-c-count">
+          <div class="t-c-c-hour">
+            <span class="t-c-c-txt">{{ now | moment("HH") }}</span>
+          </div>
+          <div class="t-c-c-min">
+            <span class="t-c-c-txt">{{ now | moment("mm") }}</span>
+          </div>
+          <div class="t-c-c-sec">
+            <span class="t-c-c-txt">{{ now | moment("ss") }}</span>
+          </div>
         </div>
       </div>
+      <div class="t-c-right flex flex-col">
+        <div class="t-c-details">
+          <h1 class="">商品详情</h1>
+          <div>
+            <div>类别 <span>公制(Metric)</span></div>
+            <div>系列 <span>粗牙</span></div>
+            <div><span>材质 35CrMoA(SCM435)</span></div>
+            <div>强度等级<span> 12.9级</span></div>
+            <div>产品标准<span> DIN912</span></div>
+            <div>螺纹规格d<span> M1.4-0.3</span></div>
+            <div>长度L<span> 发黑</span></div>
+            <div>表面处理<span> 强度等级 12.9级</span></div>
+            <div>货期：</div>
+            <div>供应商信用等级<span> 金牌供应商</span></div>
+            <div>付款方式<span> 微信，角马分期</span></div>
+            <div>配送方式<span> 物流，快递</span></div>
+          </div>
+        </div>
+      </div>
+      <button @click="$router.push('/four')">44444</button>
     </div>
-    <button @click="$router.push('/four')">44444</button>
   </div>
 </template>
 
@@ -60,32 +78,35 @@ export default {
   name: "Index",
   data() {
     return {
-      day: 0,
-      hr: 0,
-      min: 0,
-      sec: 0
+      now: new Date(),
+      countdownIntervalId: null,
+      countdownTimeoutId: null
     };
   },
-  mounted: function() {
+  created() {
+    this.now.setHours(0, 10, 0, 0);
     this.countdown();
+    this.autoStopCountdown();
   },
   methods: {
-    countdown: function() {
-      const end = Date.parse(new Date("2019-11-21"));
-      const now = Date.parse(new Date());
-      const msec = end - now;
-      // let day = parseInt(msec / 1000 / 60 / 60 / 24);
-      // let hr = parseInt((msec / 1000 / 60 / 60) % 24);
-      let min = parseInt((msec / 1000 / 60) % 60);
-      let sec = parseInt((msec / 1000) % 60);
-      // this.day = day;
-      // this.hr = hr > 9 ? hr : "0" + hr;
-      this.min = min > 9 ? min : "0" + min;
-      this.sec = sec > 9 ? sec : "0" + sec;
-      const that = this;
-      setTimeout(function() {
-        that.countdown();
+    countdown() {
+      this.countdownIntervalId = setInterval(() => {
+        this.now.setSeconds(this.now.getSeconds() - 1);
+        this.$forceUpdate();
       }, 1000);
+    },
+    autoStopCountdown() {
+      this.countdownTimeoutId = setTimeout(() => {
+        clearInterval(this.countdownIntervalId);
+      }, 1000 * 60 * 10);
+    }
+  },
+  beforeDestroy() {
+    if (this.countdownIntervalId) {
+      clearInterval(this.countdownIntervalId);
+    }
+    if (this.countdownTimeoutId) {
+      clearTimeout(this.countdownTimeoutId);
     }
   }
 };
@@ -96,6 +117,7 @@ export default {
   width: 100%;
   margin-top: 48px;
   padding: 0 100px;
+
   p {
     font-weight: 500;
     font-size: 24px;
@@ -106,19 +128,19 @@ export default {
   }
   .third-content {
     span {
-      width: 82px;
-      height: 82px;
+      width: 64px;
+      height: 64px;
       margin: 12px;
       background: #eeeeee;
     }
     .active {
-      width: 82px;
-      height: 82px;
+      width: 64px;
+      height: 64px;
       margin: 12px;
       background: #2c7a7b;
     }
     .t-c-right {
-      margin-left: 96px;
+      margin-left: 32px;
       /*background: #eeeeee;*/
       .t-c-details {
         h1 {
@@ -133,6 +155,92 @@ export default {
             font-weight: 400;
             background: #ffffff;
           }
+        }
+      }
+    }
+  }
+
+  .third-countdown {
+    width: 190px;
+    height: 275px;
+    margin-left: 32px;
+    background-color: #e83632;
+    position: relative;
+    .t-c-cn {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 34px;
+      color: #fff;
+    }
+
+    .t-c-en {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .t-c-io {
+      width: 20px;
+      height: 33px;
+      position: absolute;
+      background: url("../../assets/img/seckill.png") no-repeat -32.5px 0;
+      background-size: 52.5px 40px;
+      left: 85px;
+      top: 126px;
+      display: block;
+    }
+
+    .t-c-info {
+      position: absolute;
+      top: 170px;
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .t-c-count {
+      position: absolute;
+      top: 212px;
+      left: 30px;
+      height: 40px;
+      .t-c-c-hour,
+      .t-c-c-min,
+      .t-c-c-sec {
+        position: relative;
+        background-color: #2f3430;
+        width: 40px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        margin-right: 5px;
+      }
+
+      .t-c-c-txt {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        height: auto;
+        width: auto;
+        margin: 0;
+        background: unset;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #e83632;
         }
       }
     }

@@ -7,6 +7,7 @@ import "./assets/css/utilities.css";
 import "./assets/scss/app.scss";
 
 Vue.config.productionTip = false;
+Vue.use(require("vue-moment"));
 
 new Vue({
   router,
