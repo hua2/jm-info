@@ -1,6 +1,7 @@
 <template>
   <div class="condition">
     <div class="condition-left flex flex-col">
+      <p>实施采买-条件设定</p>
       <div class="c-l-select flex">
         <span class="">类别</span>
         <button>公制(Metric)</button>
@@ -48,37 +49,12 @@
         <button>M12-1.5</button>
         <button>M12-1.75</button>
         <button>M14-1.5</button>
-        <button>M14-2.0</button>
-        <button>M16-1.5</button>
-        <button>M16-2.0</button>
-        <button>18-1.5</button>
-        <button>M18-2.5</button>
-        <button>M2-0.4</button>
-      </div>
-      <div class="c-l-select flex">
-        <span class="">长度L </span>
-        <button>1"</button>
-        <button>1-1/2"</button>
-        <button>1-1/4"</button>
-        <button>1-1/8"</button>
-        <button>1-3/4"</button>
-        <button>1-3/8"</button>
-        <button>1-5/8"</button>
-        <button>1-7/8"</button>
-        <button>1/2"</button>
-        <button>1/4"</button>
-        <button>2"</button>
-        <button>2-1/2"</button>
-        <button>2-1/4"</button>
-        <button>2-3/4"</button>
-        <button>3"</button>
-        <button>3-1/2"</button>
-      </div>
-      <div class="c-l-select flex">
-        <span class="">表面处理 </span>
-        <button>表面处理</button>
-        <button>本色</button>
-        <button>蓝白锌</button>
+        <!--        <button>M14-2.0</button>-->
+        <!--        <button>M16-1.5</button>-->
+        <!--        <button>M16-2.0</button>-->
+        <!--        <button>18-1.5</button>-->
+        <!--        <button>M18-2.5</button>-->
+        <!--        <button>M2-0.4</button>-->
       </div>
     </div>
   </div>
@@ -95,13 +71,20 @@ export default {
   margin: 0 auto;
   padding: 0 100px;
   .condition-left {
-    margin-top: 120px;
+    margin-top: 36px;
     width: 100%;
     height: 600px;
+    p {
+      font-weight: 500;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #c8cdd1;
+    }
     .c-l-select {
       color: #415058;
       span {
-        width: 88px;
+        width: 76px;
         height: 60px;
         margin-top: 30px;
       }
