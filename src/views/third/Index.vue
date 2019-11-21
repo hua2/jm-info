@@ -51,7 +51,7 @@
       </div>
       <div class="t-c-right flex flex-col">
         <div class="t-c-details">
-          <p class="">商品详情</p>
+          <p class="">采买要求</p>
           <div>
             <div>类别 <span>公制(Metric)</span></div>
             <div>系列 <span>粗牙</span></div>
@@ -68,6 +68,14 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="f-c-con flex justify-around">
+      <span>广东有限责任公司</span>
+      <span>
+        <p>共成交了38笔；</p>
+        <p>信用级别良好；</p>
+        <p>阶梯报价数为200元</p>
+      </span>
     </div>
     <button @click="$router.push('/four')">44444</button>
   </div>
@@ -157,6 +165,34 @@ export default {
           }
         }
       }
+    }
+  }
+  .f-c-con {
+    width: 660px;
+    height: fit-content;
+    p {
+      margin-bottom: 10px;
+    }
+    span {
+      color: #415058;
+      width: 100%;
+      line-height: 20px;
+      padding: 10px 6px;
+      border: 1px solid #e2e8f0;
+    }
+    button {
+      color: #fff;
+      background-color: #d7262e;
+      width: 64px;
+      margin: 0 6px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 2px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      padding: 0;
     }
   }
 

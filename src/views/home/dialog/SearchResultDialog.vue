@@ -2,13 +2,15 @@
   <JmFullDialog v-if="show" @close="show = false">
     <div class="search-result">
       <div class="search-content slide-in-top">
-        <p>实施采买-条件设定</p>
+        <h1>实施采买-条件设定</h1>
         <div class="flex">
           <Condition />
           <SecondRight />
         </div>
       </div>
-      <button @click="$router.push('/third')">去报价</button>
+      <div class="search-bottom">
+        <button @click="$router.push('/third')">去报价</button>
+      </div>
     </div>
   </JmFullDialog>
 </template>
@@ -59,13 +61,24 @@ export default {
       opacity: 1;
     }
   }
-  p {
+  h1 {
     font-weight: 500;
     font-size: 24px;
     margin-bottom: 20px;
     padding-bottom: 16px;
     padding-top: 12px;
     border-bottom: 1px solid #c8cdd1;
+  }
+  .search-bottom {
+    margin-top: 32px;
+    border-top: 1px solid #c8cdd1;
+    button {
+      position: absolute;
+      color: #d7262e;
+      cursor: pointer;
+      right: 64px;
+      margin-top: 24px;
+    }
   }
 }
 </style>
