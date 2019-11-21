@@ -8,6 +8,7 @@
           <SecondRight />
         </div>
       </div>
+      <button @click="$router.push('/third')">去报价</button>
     </div>
   </JmFullDialog>
 </template>

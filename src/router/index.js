@@ -24,6 +24,11 @@ const router = new Router({
             import(
               /* webpackChunkName: "condition" */ "@/views/condition/Index.vue"
             )
+        },
+        {
+          path: "third",
+          component: () =>
+            import(/* webpackChunkName: "third" */ "@/views/third/Index.vue")
         }
       ]
     }
