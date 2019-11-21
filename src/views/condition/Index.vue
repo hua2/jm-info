@@ -2,6 +2,7 @@
   <div class="condition">
     <div class="condition-left flex flex-col">
       <p>实施采买-条件设定</p>
+      <div>商品属性：</div>
       <div class="c-l-select flex">
         <span class="">类别</span>
         <button>公制(Metric)</button>

@@ -16,6 +16,11 @@ export default {
   data() {
     return {
       option: {
+        visualMap: {
+          min: 0,
+          max: 2500,
+          show: false
+        },
         series: [
           {
             name: "test",
@@ -28,7 +33,15 @@ export default {
               emphasis: {
                 show: true
               }
-            }
+            },
+            data: [
+              { name: "北京", value: Math.round(Math.random() * 1000) },
+              { name: "天津", value: Math.round(Math.random() * 1000) },
+              { name: "湖南", value: Math.round(Math.random() * 1000) },
+              { name: "安徽", value: Math.round(Math.random() * 1000) },
+              { name: "山东", value: Math.round(Math.random() * 1000) },
+              { name: "新疆", value: Math.round(Math.random() * 1000) }
+            ]
           }
         ]
       }
@@ -39,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .china-map {
   .my-chart {
-    width: 800px;
+    width: 620px;
     height: 500px;
   }
 }
