@@ -5,11 +5,7 @@
       <h2 class="text-center">让能源更高效</h2>
       <div class="flex items-center justify-center">
         <input type="text" class="pl-16" />
-        <img
-          src="../../assets/img/search-icon.png"
-          alt=""
-          @click="$router.push('/condition')"
-        />
+        <img src="../../assets/img/search-icon.png" alt="" @click="search" />
         <div class="home-enquiry ml-16">
           <button>立即询价</button>
           <div class="home-dropdown">
@@ -25,6 +21,8 @@
     </div>
     <UploadEnquiryDialog ref="uploadEnquiryDialog" />
     <UploadPicDialog ref="uploadPicDialog" />
+    <SearchResultDialog ref="searchResultDialog" />
+    <JmLoading text="正在匹配中..." v-if="isLoading" />
   </div>
 </template>
 
@@ -32,6 +30,8 @@
 import UploadEnquiryDialog from "@/views/home/dialog/UploadEnquiryDialog";
 import UploadPicDialog from "@/views/home/dialog/UploadPicDialog";
 import Header from "@/components/Header/index";
+import JmLoading from "@/components/JmLoading/index";
+import SearchResultDialog from "@/views/home/dialog/SearchResultDialog";
 /**
  * 首页模块
  * @author lyh
@@ -40,13 +40,27 @@ import Header from "@/components/Header/index";
 
 export default {
   name: "Home",
-  components: { Header, UploadPicDialog, UploadEnquiryDialog },
+  components: {
+    SearchResultDialog,
+    JmLoading,
+    Header,
+    UploadPicDialog,
+    UploadEnquiryDialog
+  },
+  data() {
+    return {
+      isLoading: false
+    };
+  },
   methods: {
     showUploadEnquiryDialog() {
       this.$refs.uploadEnquiryDialog.show = true;
     },
     showUploadPicDialog() {
       this.$refs.uploadPicDialog.showPic = true;
+    },
+    search() {
+      this.$refs.searchResultDialog.show = true;
     }
   }
 };
