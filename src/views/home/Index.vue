@@ -30,21 +30,23 @@
           <button>立即询价</button>
           <div class="home-dropdown">
             <a href="javascript:" @click="showUploadEnquiryDialog">
-              <span>上传询价</span>
+              <span class="ml-6">上传询价</span>
             </a>
-            <a href="javascript:">
-              <span>上传图纸</span>
+            <a href="javascript:" @click="showUploadPicDialog">
+              <span class="ml-6">上传图纸</span>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <UploadEnquiryDialog ref="uploadEnquiryDialog"></UploadEnquiryDialog>
+    <UploadEnquiryDialog ref="uploadEnquiryDialog" />
+    <UploadPicDialog ref="uploadPicDialog" />
   </div>
 </template>
 
 <script>
 import UploadEnquiryDialog from "@/views/home/dialog/UploadEnquiryDialog";
+import UploadPicDialog from "@/views/home/dialog/UploadPicDialog";
 /**
  * 首页模块
  * @author lyh
@@ -53,10 +55,13 @@ import UploadEnquiryDialog from "@/views/home/dialog/UploadEnquiryDialog";
 
 export default {
   name: "Home",
-  components: { UploadEnquiryDialog },
+  components: { UploadPicDialog, UploadEnquiryDialog },
   methods: {
     showUploadEnquiryDialog() {
       this.$refs.uploadEnquiryDialog.show = true;
+    },
+    showUploadPicDialog() {
+      this.$refs.uploadPicDialog.showPic = true;
     }
   }
 };
