@@ -11,11 +11,11 @@
           <button @click="choose">
             <img src="../../../assets/img/zfb.png" alt="" />
           </button>
-          <button @click="choose">银联</button>
           <button @click="choose">
             <img src="../../../assets/img/visa.png" alt="" />
           </button>
           <button @click="choose">角马分期</button>
+          <button @click="choose">银联</button>
         </div>
       </div>
       <div class="s-c-left">
@@ -53,7 +53,7 @@
           </p>
           <p class="confirm">
             <label class="">
-              <input type="checkbox" />
+              <input type="checkbox" class="mr-4" />
               <span class=""><span class=""></span></span>
               <span class=""
                 >我已阅读并同意<a

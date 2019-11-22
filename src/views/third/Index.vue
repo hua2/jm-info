@@ -73,7 +73,7 @@
             @click="showCompany = c"
           >
             <td
-              style="width: 250px"
+              style="width: 280px"
               class="cursor-pointer"
               :class="c.name === showCompany.name ? 'active' : ''"
             >
@@ -403,7 +403,8 @@ export default {
     }
   }
   .third-footer {
-    width: 620px;
+    /*width: 620px;*/
+    width: 100%;
     h2 {
       font-size: 16px;
       text-align: center;
