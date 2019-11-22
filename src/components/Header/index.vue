@@ -1,7 +1,7 @@
 <template>
   <div class="home-header flex text-14">
     <div class="header-left flex items-center">
-      <img alt="角马 logo" src="../../assets/img/logo.png" />
+      <img alt="角马 logo" src="../../assets/img/logo-main.png" />
       <div class="ml-16">
         <a href="#" style="color: #D7262E">中文</a>
         <span class="ml-4 mr-4">/</span>
@@ -39,8 +39,8 @@ export default {
   .header-left {
     width: 350px;
     img {
-      width: 50px;
-      height: 36px;
+      width: 120px;
+      height: 32px;
     }
   }
   .header-content {
