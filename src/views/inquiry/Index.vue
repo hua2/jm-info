@@ -405,6 +405,7 @@ export default {
   .third-footer {
     /*width: 620px;*/
     width: 100%;
+    margin-bottom: 48px;
     h2 {
       font-size: 16px;
       text-align: center;

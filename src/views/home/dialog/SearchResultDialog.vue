@@ -5,7 +5,7 @@
         <h1>实施采买-条件设定</h1>
         <div class="flex">
           <div class="s-c-left">
-            <h2>商品属性</h2>
+            <h2>商品要求</h2>
             <div class="s-c-select">
               <span>类别</span>
               <button @click="choose">公制(Metric)</button>
@@ -54,7 +54,7 @@
               <!--            <button @click="choose">M12-1.75</button>-->
               <!--        <button @click="choose">M14-1.5</button>-->
             </div>
-            <h2 class="mt-14">供应商范围</h2>
+            <h2 class="mt-14">供应商筛选</h2>
             <div class="s-c-select">
               <span>货期</span>
               <button @click="choose">一天</button>
@@ -83,7 +83,10 @@
               <button @click="choose">快递</button>
               <button @click="choose">供应商配送</button>
             </div>
-            <ChinaMap />
+            <div>
+              <h2 class="mt-14">供应商所在地</h2>
+              <ChinaMap />
+            </div>
           </div>
           <div class="s-c-right">
             <p>
@@ -96,11 +99,11 @@
               <span>浙江4%</span> ，
               <span> 黑龙江2%</span>
               其中金牌供应商有 <span>132</span>家，银牌供应商有
-              <span>306</span>家，认证供应商有 <span>650</span>家，
+              <span>306</span>家，认证供应商有 <span>650</span>家。
             </p>
-            <p>
+            <p style="border-bottom: 1px solid #c8cdd1;" class="pb-6">
               您的信用能力为 <span>93</span>分，超过全平台
-              <span>72%</span>的采购企业 查看信用分的构成？
+              <span>72%</span>的采购企业 查看信用分的构成。
             </p>
             <p>
               您搜索的零件
@@ -109,9 +112,9 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="search-bottom">
-        <button @click="$router.push('/third')">去报价</button>
+        <div class="search-bottom">
+          <button @click="$router.push('/inquiry')">发起询价</button>
+        </div>
       </div>
     </div>
   </JmFullDialog>
@@ -144,6 +147,8 @@ export default {
 
 <style scoped lang="scss">
 .search-result {
+  margin: 0 auto;
+  width: 1200px;
   .slide-in-top {
     -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
       both;
@@ -237,10 +242,23 @@ export default {
     border-top: 1px solid #c8cdd1;
     button {
       position: absolute;
-      color: #d7262e;
       cursor: pointer;
-      right: 64px;
+      right: 0;
       margin-top: 24px;
+      color: #fff;
+      background-color: #d7262e;
+      width: 92px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 2px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      &:hover {
+        background: #d0021b;
+      }
     }
   }
 }

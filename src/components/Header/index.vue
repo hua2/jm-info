@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="header-right text-right">
-      <span>欢迎，角马能源有限责任公司</span>
+      <span>欢迎，角马能源科技有限责任公司</span>
     </div>
   </div>
 </template>

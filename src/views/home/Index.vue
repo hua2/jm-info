@@ -7,7 +7,7 @@
         <input type="text" class="pl-16" />
         <img src="../../assets/img/search-icon.png" alt="" @click="search" />
         <div class="home-enquiry ml-16">
-          <button>立即询价</button>
+          <button @click="search">立即询价</button>
           <div class="home-dropdown">
             <a href="javascript:" @click="showUploadEnquiryDialog">
               <span class="ml-6">上传询价</span>
@@ -64,7 +64,7 @@ export default {
       setTimeout(() => {
         this.$refs.searchResultDialog.show = true;
         this.isLoading = false;
-      }, 1000);
+      }, 3000);
     }
   }
 };

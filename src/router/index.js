@@ -26,9 +26,11 @@ const router = new Router({
             )
         },
         {
-          path: "third",
+          path: "inquiry",
           component: () =>
-            import(/* webpackChunkName: "third" */ "@/views/third/Index.vue")
+            import(
+              /* webpackChunkName: "inquiry" */ "@/views/inquiry/Index.vue"
+            )
         }
       ]
     }

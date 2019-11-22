@@ -14,7 +14,9 @@
           <button @click="choose">
             <img src="../../../assets/img/visa.png" alt="" />
           </button>
-          <button @click="choose">角马分期</button>
+          <button @click="choose">
+            <img src="../../../assets/img/jm-pay.png" alt="" />
+          </button>
           <button @click="choose">银联</button>
         </div>
       </div>
@@ -48,7 +50,7 @@
           <p class="">
             了解<a href="javascript:">开票须知</a>，若有其它问题请发送邮件到<a
               href="javascript:"
-              >support@mockingbot.com</a
+              >official@jm.energy</a
             >，我们会及时响应
           </p>
           <p class="confirm">

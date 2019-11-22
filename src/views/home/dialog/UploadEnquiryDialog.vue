@@ -3,7 +3,7 @@
     <div class="upload-enquiry">
       <div class="flex justify-between items-center">
         <input type="file" />
-        <button>确定</button>
+        <button @click="show = false">确定</button>
       </div>
     </div>
   </JmDialog>
