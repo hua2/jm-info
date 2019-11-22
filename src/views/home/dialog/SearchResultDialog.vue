@@ -130,9 +130,9 @@ export default {
   },
   methods: {
     choose(e) {
-      console.log(e);
-      const isSelf = e.path[0];
-      const isParent = e.path[1];
+      const buttonIndex = e.path.findIndex(p => p.tagName === "BUTTON");
+      const isSelf = e.path[buttonIndex];
+      const isParent = e.path[buttonIndex + 1];
       isParent.childNodes.forEach(c => {
         c.classList = [];
       });
