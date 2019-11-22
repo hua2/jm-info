@@ -83,7 +83,19 @@
         </table>
 
         <div class="t-f-active">
-          <p>{{ showCompany.detail }}</p>
+          <div class="flex justify-between">
+            <p
+              v-html="showCompany.detail"
+              class="ml-32"
+              style="color: #606266;font-size: 16px;letter-spacing: 2px"
+            ></p>
+            <div
+              style="width: 276px;margin-left: 16px;margin-right:12px"
+              v-if="showCompany.img"
+            >
+              <img :src="showCompany.img" alt="" />
+            </div>
+          </div>
           <table class="third-table mt-16">
             <tr>
               <td>阶梯报价</td>
@@ -146,6 +158,7 @@ export default {
     };
   },
   created() {
+    this.showCompany = this.companies[0];
     this.initSeats();
     setTimeout(() => {
       this.countdownSeated();
@@ -197,7 +210,7 @@ export default {
 
           if (this.countdownType === "confirmed") {
             this.isConfirmedAlready = true;
-            this.randomCompany();
+            // this.randomCompany();
           }
           if (this.countdownType === "seated") {
             this.isSeatedAlready = true;
@@ -414,7 +427,7 @@ export default {
       line-height: 32px;
     }
     .t-f-active {
-      background: #ecf5ff;
+      /*background: #ecf5ff;*/
       padding: 8px 6px;
       font-size: 14px;
       .third-table {

@@ -101,14 +101,18 @@
               其中金牌供应商有 <span>132</span>家，银牌供应商有
               <span>306</span>家，认证供应商有 <span>650</span>家。
             </p>
-            <p style="border-bottom: 1px solid #c8cdd1;" class="pb-6">
+            <p class="pb-6">
               您的信用能力为 <span>93</span>分，超过全平台
-              <span>72%</span>的采购企业 查看信用分的构成。
+              <span>72%</span>的采购企业查看<a
+                href="javascript:"
+                style="text-decoration: underline;color: #1e98ea;font-size: 18px"
+                >信用分</a
+              >的构成。
             </p>
             <p>
               您搜索的零件
               <span>”螺丝“</span
-              >属于紧固件的一种，您可以细化您的搜索分类来进行更精确的匹配
+              >属于紧固件的一种，您可以细化您的搜索分类来进行更精确的匹配。
             </p>
           </div>
         </div>
