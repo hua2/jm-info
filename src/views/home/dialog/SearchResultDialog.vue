@@ -56,9 +56,11 @@
           <h2 class="mt-14">供应商范围</h2>
           <div class="s-c-select">
             <span>货期</span>
-            <button @click="choose">公制</button>
-            <button @click="choose">美制</button>
-            <button @click="choose">英制</button>
+            <button @click="choose">一天</button>
+            <button @click="choose">两天</button>
+            <button @click="choose">三天</button>
+            <button @click="choose">四天</button>
+            <button @click="choose">五天</button>
           </div>
           <div class="s-c-select">
             <span>信用等级</span>
@@ -81,6 +83,9 @@
             <button @click="choose">供应商配送</button>
           </div>
           <ChinaMap />
+        </div>
+        <div>
+          aaaa
         </div>
       </div>
       <div class="search-bottom">
@@ -159,7 +164,9 @@ export default {
       width: 600px;
       height: fit-content;
       h2 {
-        font-size: 18px;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 12px;
       }
       .s-c-select {
         color: #415058;
@@ -183,8 +190,8 @@ export default {
             box-shadow: 0 0 4px 0 rgba(31, 41, 46, 0.22);
           }
           &.active {
-            background-color: #e8f3fc;
-            border-color: #1e98ea;
+            background-color: #ffffff;
+            border-color: #d7262e;
           }
         }
       }

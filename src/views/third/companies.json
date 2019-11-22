@@ -1,7 +1,7 @@
 [
   {
     "name": "济南鹏万里商贸有限公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了78笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -11,7 +11,7 @@
   },
   {
     "name": "宁城县华鑫建筑工程有限责任公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了88笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -21,7 +21,7 @@
   },
   {
     "name": "河北建设集团股份有限公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了218笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -31,7 +31,7 @@
   },
   {
     "name": "甘肃昊源工贸有限责任公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了228笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -41,7 +41,7 @@
   },
   {
     "name": "山东巨能数控机床有限公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了34笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -51,7 +51,7 @@
   },
   {
     "name": "新疆鑫杨泰安防器材有限公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了56笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -61,7 +61,7 @@
   },
   {
     "name": "丽水市宏志五金有限公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了54笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,
@@ -71,7 +71,127 @@
   },
   {
     "name": "河北省广平县建筑安装企业集团公司",
-    "detail": "成交了888笔，信用级别（良好）",
+    "detail": "成交了52笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "广西国奥体育用品有限公司",
+    "detail": "成交了35笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "广西星源天地电子科技有限公司",
+    "detail": "成交了42笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "南宁友赛电子科技有限公司",
+    "detail": "成交了22笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "杭州村口环保科技有限公司",
+    "detail": "成交了62笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "浙江中南建设集团有限公司",
+    "detail": "成交了83笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "北京市新港永豪水务工程有限公司",
+    "detail": "成交了63笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "安徽省大禹水利工程科技有限公司",
+    "detail": "成交了73笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "衡水中盛工程橡胶有限公司",
+    "detail": "成交了27笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "沃克斯电梯（中国）有限公司",
+    "detail": "成交了62笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "江西汇恒置业有限公司",
+    "detail": "成交了89笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "浙江宏杰建设有限公司",
+    "detail": "成交了72笔，信用级别（良好）",
+    "firstPrice": 1000,
+    "firstPriceCount": 500,
+    "secondPrice": 3000,
+    "secondPriceCount": 400,
+    "thirdPrice": 5000,
+    "thirdPriceCount": 300
+  },
+  {
+    "name": "杭州市市政工程集团有限公司",
+    "detail": "成交了63笔，信用级别（良好）",
     "firstPrice": 1000,
     "firstPriceCount": 500,
     "secondPrice": 3000,

@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .jm-full {
   position: fixed;
   top: 0;

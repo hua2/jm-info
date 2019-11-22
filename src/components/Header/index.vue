@@ -51,6 +51,22 @@ export default {
         &:hover {
           color: #d7262e;
         }
+        button {
+          color: #fff;
+          background-color: #d7262e;
+          width: 92px;
+          height: 32px;
+          line-height: 32px;
+          text-align: center;
+          border-radius: 2px;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border: none;
+          padding: 0;
+          &:hover {
+            background: #d0021b;
+          }
+        }
       }
     }
   }

@@ -86,6 +86,9 @@ export default {
     box-shadow: none;
     border: none;
     padding: 0;
+    &:hover {
+      background: #d0021b;
+    }
   }
   .home-content {
     margin-top: 200px;
