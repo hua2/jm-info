@@ -146,7 +146,6 @@ export default {
     };
   },
   created() {
-    this.showCompany = this.companies[0];
     this.initSeats();
     setTimeout(() => {
       this.countdownSeated();
@@ -198,6 +197,7 @@ export default {
 
           if (this.countdownType === "confirmed") {
             this.isConfirmedAlready = true;
+            this.randomCompany();
           }
           if (this.countdownType === "seated") {
             this.isSeatedAlready = true;
@@ -207,6 +207,19 @@ export default {
           }
         }
       }, 1000);
+    },
+    randomCompany() {
+      const isConfirmedSeats = this.seats.filter(
+        s => s.isConfirmed === true && s.isSeated === true
+      );
+      let allCompanies = [...this.companies];
+      allCompanies = this.getArrRandomly(allCompanies);
+      const useCompanies = [];
+      for (let i = 0; i < isConfirmedSeats.length; i++) {
+        useCompanies.push(allCompanies[i]);
+      }
+      this.companies = [...useCompanies];
+      this.showCompany = this.companies[0];
     },
     randomSeatedSeats() {
       let notSeatedSeats = this.seats.filter(s => s.isSeated === false);
