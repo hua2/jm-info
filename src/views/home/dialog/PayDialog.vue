@@ -5,10 +5,16 @@
       <div class="s-c-left">
         <div class="s-c-select">
           <span>付款方式</span>
-          <button @click="choose">微信</button>
-          <button @click="choose">支付宝</button>
+          <button @click="choose">
+            <img src="../../../assets/img/wx.png" alt="" />
+          </button>
+          <button @click="choose">
+            <img src="../../../assets/img/zfb.png" alt="" />
+          </button>
           <button @click="choose">银联</button>
-          <button @click="choose">Visa</button>
+          <button @click="choose">
+            <img src="../../../assets/img/visa.png" alt="" />
+          </button>
           <button @click="choose">角马分期</button>
         </div>
       </div>
@@ -133,10 +139,12 @@ h1 {
 }
 .search-content {
   .s-c-left {
-    width: 600px;
+    width: 100%;
     height: fit-content;
     .s-c-select {
       color: #415058;
+      display: flex;
+      align-items: center;
       a {
         font-size: 14px;
         color: #d7262e;
@@ -163,6 +171,10 @@ h1 {
         &.active {
           background-color: #ffffff;
           border-color: #d7262e;
+        }
+        img {
+          width: 152px;
+          height: 40px;
         }
       }
     }

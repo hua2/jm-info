@@ -3,89 +3,109 @@
     <div class="search-result">
       <div class="search-content slide-in-top">
         <h1>实施采买-条件设定</h1>
-        <div class="s-c-left">
-          <h2>商品属性</h2>
-          <div class="s-c-select">
-            <span>类别</span>
-            <button @click="choose">公制(Metric)</button>
-            <button @click="choose">美制(ANSI/ASME)</button>
-            <button @click="choose">英制(BSW)</button>
+        <div class="flex">
+          <div class="s-c-left">
+            <h2>商品属性</h2>
+            <div class="s-c-select">
+              <span>类别</span>
+              <button @click="choose">公制(Metric)</button>
+              <button @click="choose">美制(ANSI/ASME)</button>
+              <button @click="choose">英制(BSW)</button>
+            </div>
+            <div class="s-c-select">
+              <span>系列</span>
+              <button @click="choose">粗牙</button>
+              <button @click="choose">细牙</button>
+            </div>
+            <div class="s-c-select">
+              <span>材质</span>
+              <button @click="choose">35CrMoA(SCM435)</button>
+              <button @click="choose">ML35</button>
+              <button @click="choose">ML40CR</button>
+              <!--            <button @click="choose">PA66</button>-->
+              <!--        <button @click="choose">不锈钢304</button>-->
+              <span style="color: #1e98ea">更多</span>
+            </div>
+            <div class="s-c-select">
+              <span>强度等级</span>
+              <button @click="choose">10.9级</button>
+              <button @click="choose">12.9级</button>
+              <button @click="choose">14.9级</button>
+              <button @click="choose">8.8级</button>
+              <button @click="choose">A2-70</button>
+              <!--        <button @click="choose">A4-70</button>-->
+            </div>
+            <div class="s-c-select">
+              <span>产品标准 </span>
+              <button @click="choose">NSI/ASME</button>
+              <button @click="choose">B18.3</button>
+              <button @click="choose">BS2470</button>
+              <button @click="choose">DIN912</button>
+              <!--        <button @click="choose">GB70-76</button>-->
+              <!--        <button @click="choose">GB70.1</button>-->
+              <span style="color: #1e98ea">更多</span>
+            </div>
+            <div class="s-c-select">
+              <span>螺纹规格d</span>
+              <button @click="choose">M1.4-0.3</button>
+              <button @click="choose">M10-1.0</button>
+              <button @click="choose">M10-1.5</button>
+              <button @click="choose">M12-1.5</button>
+              <!--            <button @click="choose">M12-1.75</button>-->
+              <!--        <button @click="choose">M14-1.5</button>-->
+            </div>
+            <h2 class="mt-14">供应商范围</h2>
+            <div class="s-c-select">
+              <span>货期</span>
+              <button @click="choose">一天</button>
+              <button @click="choose">两天</button>
+              <button @click="choose">三天</button>
+              <button @click="choose">四天</button>
+              <button @click="choose">五天</button>
+            </div>
+            <div class="s-c-select">
+              <span>信用等级</span>
+              <button @click="choose">认证供应商</button>
+              <button @click="choose">银牌供应商</button>
+              <button @click="choose">金牌供应商</button>
+            </div>
+            <div class="s-c-select">
+              <span>付款方式</span>
+              <button @click="choose">微信</button>
+              <button @click="choose">支付宝</button>
+              <button @click="choose">银联</button>
+              <button @click="choose">Visa</button>
+              <button @click="choose">角马分期</button>
+            </div>
+            <div class="s-c-select">
+              <span>配送</span>
+              <button @click="choose">物流</button>
+              <button @click="choose">快递</button>
+              <button @click="choose">供应商配送</button>
+            </div>
+            <ChinaMap />
           </div>
-          <div class="s-c-select">
-            <span>系列</span>
-            <button @click="choose">粗牙</button>
-            <button @click="choose">细牙</button>
+          <div class="s-c-right">
+            <p>
+              根据您的搜索关键字 <span>”螺丝“</span> ，我们检索到了
+              <span style="color: #ffb247">1290</span>家提供此商品的供应商。
+            </p>
+            <p>
+              这些供应商分布在 <span>广东40%</span> ，
+              <span>苏州49%</span> ，<span>河北 5%</span> ，
+              <span>浙江4%</span> ，
+              <span> 黑龙江2%</span>
+              其中金牌供应商有 <span>132</span>家，银牌供应商有
+              <span>306</span>家，认证供应商有 <span>650</span>家，
+            </p>
+            <p>
+              您的信用能力为 <span>93</span>分，超过全平台
+              <span>72%</span>的采购企业 查看信用分的构成？
+            </p>
+            <p>
+              您搜索的零件”螺丝“属于紧固件的一种，您可以细化您的搜索分类来进行更精确的匹配
+            </p>
           </div>
-          <div class="s-c-select">
-            <span>材质</span>
-            <button @click="choose">35CrMoA(SCM435)</button>
-            <button @click="choose">ML35</button>
-            <button @click="choose">ML40CR</button>
-            <!--            <button @click="choose">PA66</button>-->
-            <!--        <button @click="choose">不锈钢304</button>-->
-            <span style="color: #1e98ea">更多</span>
-          </div>
-          <div class="s-c-select">
-            <span>强度等级</span>
-            <button @click="choose">10.9级</button>
-            <button @click="choose">12.9级</button>
-            <button @click="choose">14.9级</button>
-            <button @click="choose">8.8级</button>
-            <button @click="choose">A2-70</button>
-            <!--        <button @click="choose">A4-70</button>-->
-          </div>
-          <div class="s-c-select">
-            <span>产品标准 </span>
-            <button @click="choose">NSI/ASME</button>
-            <button @click="choose">B18.3</button>
-            <button @click="choose">BS2470</button>
-            <button @click="choose">DIN912</button>
-            <!--        <button @click="choose">GB70-76</button>-->
-            <!--        <button @click="choose">GB70.1</button>-->
-            <span style="color: #1e98ea">更多</span>
-          </div>
-          <div class="s-c-select">
-            <span>螺纹规格d</span>
-            <button @click="choose">M1.4-0.3</button>
-            <button @click="choose">M10-1.0</button>
-            <button @click="choose">M10-1.5</button>
-            <button @click="choose">M12-1.5</button>
-            <!--            <button @click="choose">M12-1.75</button>-->
-            <!--        <button @click="choose">M14-1.5</button>-->
-          </div>
-          <h2 class="mt-14">供应商范围</h2>
-          <div class="s-c-select">
-            <span>货期</span>
-            <button @click="choose">一天</button>
-            <button @click="choose">两天</button>
-            <button @click="choose">三天</button>
-            <button @click="choose">四天</button>
-            <button @click="choose">五天</button>
-          </div>
-          <div class="s-c-select">
-            <span>信用等级</span>
-            <button @click="choose">认证供应商</button>
-            <button @click="choose">银牌供应商</button>
-            <button @click="choose">金牌供应商</button>
-          </div>
-          <div class="s-c-select">
-            <span>付款方式</span>
-            <button @click="choose">微信</button>
-            <button @click="choose">支付宝</button>
-            <button @click="choose">银联</button>
-            <button @click="choose">Visa</button>
-            <button @click="choose">角马分期</button>
-          </div>
-          <div class="s-c-select">
-            <span>配送</span>
-            <button @click="choose">物流</button>
-            <button @click="choose">快递</button>
-            <button @click="choose">供应商配送</button>
-          </div>
-          <ChinaMap />
-        </div>
-        <div>
-          aaaa
         </div>
       </div>
       <div class="search-bottom">
@@ -193,6 +213,19 @@ export default {
             background-color: #ffffff;
             border-color: #d7262e;
           }
+        }
+      }
+    }
+    .s-c-right {
+      width: 400px;
+      margin-top: 64px;
+      margin-left: 200px;
+      p {
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+        span {
+          font-weight: 500;
+          font-size: 18px;
         }
       }
     }
